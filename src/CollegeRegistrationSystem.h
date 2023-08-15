@@ -4,17 +4,17 @@
 #include "Student.h"
 #include "Module.h"
 #include <string>
-#include <vector>
+#include <map>
 using namespace std;
 
 class CollegeRegistrationSystem {
 private:
-    vector<Student> students;
-    vector<Module> modules;
+    map<string, Student> students;
+    map<string, Module> modules;
 
 public:
-    void addStudent(const string& id, const string& name);
-    void updateStudentRecord(const string& id, const string& newName);
+    void addStudent(const string& id, const string& name, const string& level);
+    void updateStudentRecord(const string& id, const string& newName, const string& level);
     void displayStudentRecord(const string& id) ;
     void displayAllStudentRecords() ;
     void addModule(const string& id, const string& name);
