@@ -7,7 +7,7 @@ using namespace std;
 
 int main(){
     CollegeRegistrationSystem system;
-
+    
     char choice;
     do {
         cout << "\nCollege Registration System Menu\n";
@@ -21,31 +21,31 @@ int main(){
         cout << "8. Display All Module Info\n";
         cout << "9. Exit\n";
         cout << "Enter your choice: ";
-        cin >> choice;
+        cin >> choice ;
 
         switch (choice) {
             case '1': {
                 string id, name;
                 cout << "Enter Student ID: ";
-                cin >> id;
+                getline(cin >> ws, id) ;
                 cout << "Enter Student Name: ";
-                cin >> name;
+                getline(cin >> ws, name) ;
                 system.addStudent(id, name);
                 break;
             }
             case '2': {
                 string id, newName;
                 cout << "Enter Student ID: ";
-                cin >> id;
+                getline(cin >> ws, id);
                 cout << "Enter New Student Name: ";
-                cin >> newName;
+                getline(cin >> ws, newName);
                 system.updateStudentRecord(id, newName);
                 break;
             }
             case '3': {
                 string id;
                 cout << "Enter Student ID: ";
-                cin >> id;
+                getline(cin >> ws, id);
                 system.displayStudentRecord(id);
                 break;
             }
@@ -56,25 +56,25 @@ int main(){
             case '5': {
                 string id, name;
                 cout << "Enter Module ID: ";
-                cin >> id;
+                getline(cin >> ws,name);
                 cout << "Enter Module Name: ";
-                cin >> name;
+                getline(cin >> ws, name);
                 system.addModule(id, name);
                 break;
             }
             case '6': {
                 string id, newName;
                 cout << "Enter Module ID: ";
-                cin >> id;
+                getline(cin >> ws, id);
                 cout << "Enter New Module Name: ";
-                cin >> newName;
+                getline(cin >> ws, newName);
                 system.updateModule(id, newName);
                 break;
             }
             case '7': {
                 string id;
                 cout << "Enter Module ID: ";
-                cin >> id;
+                getline(cin >> ws, id);
                 system.displayModuleInfo(id);
                 break;
             }
