@@ -34,8 +34,10 @@ void CollegeRegistrationSystem::updateStudentRecord(const string& id, const stri
 void CollegeRegistrationSystem::displayStudentRecord(const string& id) {
     for ( Student& student : students) {
         if (student.getId() == id) {
+            cout << "---------------------------\n\n";
             cout << "Student ID: " << student.getId() << "\n";
-            cout << "Student Name: " << student.getName() << "\n";
+            cout << "Student Name: " << student.getName() << "\n\n";
+            cout << "---------------------------\n\n";
             return;
         }
     }
@@ -44,9 +46,11 @@ void CollegeRegistrationSystem::displayStudentRecord(const string& id) {
 
 void CollegeRegistrationSystem::displayAllStudentRecords() {
     for ( Student& student : students) {
+        cout << "---------------------------\n\n";
         cout << "Student ID: " << student.getId() << "\n";
         cout << "Student Name: " << student.getName() << "\n\n";
     }
+    cout << "---------------------------\n\n";
 }
 
 void CollegeRegistrationSystem::addModule(const string& id, const string& name) {
@@ -75,8 +79,10 @@ void CollegeRegistrationSystem::updateModule(const string& id, const string& new
 void CollegeRegistrationSystem::displayModuleInfo(const string& id) {
     for ( Module& module : modules) {
         if (module.getId() == id) {
+            cout << "---------------------------\n\n";
             cout << "Module ID: " << module.getId() << "\n";
-            cout << "Module Name: " << module.getName() << "\n";
+            cout << "Module Name: " << module.getName() << "\n\n";
+            cout << "---------------------------\n\n";
             return;
         }
     }
@@ -85,7 +91,9 @@ void CollegeRegistrationSystem::displayModuleInfo(const string& id) {
 
 void CollegeRegistrationSystem::displayAllModuleInfo() {
     for (Module& module : modules) {
+        cout << "---------------------------\n\n";
         cout << "Module ID: " << module.getId() << "\n";
         cout << "Module Name: " << module.getName() << "\n\n";
     }
+    cout << "---------------------------\n\n";
 }
