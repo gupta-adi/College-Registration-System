@@ -8,7 +8,7 @@ using namespace std;
 int main(){
     CollegeRegistrationSystem system;
 
-    int choice;
+    char choice;
     do {
         cout << "\nCollege Registration System Menu\n";
         cout << "1. Add Student\n";
@@ -24,7 +24,7 @@ int main(){
         cin >> choice;
 
         switch (choice) {
-            case 1: {
+            case '1': {
                 string id, name;
                 cout << "Enter Student ID: ";
                 cin >> id;
@@ -33,7 +33,7 @@ int main(){
                 system.addStudent(id, name);
                 break;
             }
-            case 2: {
+            case '2': {
                 string id, newName;
                 cout << "Enter Student ID: ";
                 cin >> id;
@@ -42,18 +42,18 @@ int main(){
                 system.updateStudentRecord(id, newName);
                 break;
             }
-            case 3: {
+            case '3': {
                 string id;
                 cout << "Enter Student ID: ";
                 cin >> id;
                 system.displayStudentRecord(id);
                 break;
             }
-            case 4: {
+            case '4': {
                 system.displayAllStudentRecords();
                 break;
             }
-            case 5: {
+            case '5': {
                 string id, name;
                 cout << "Enter Module ID: ";
                 cin >> id;
@@ -62,7 +62,7 @@ int main(){
                 system.addModule(id, name);
                 break;
             }
-            case 6: {
+            case '6': {
                 string id, newName;
                 cout << "Enter Module ID: ";
                 cin >> id;
@@ -71,18 +71,18 @@ int main(){
                 system.updateModule(id, newName);
                 break;
             }
-            case 7: {
+            case '7': {
                 string id;
                 cout << "Enter Module ID: ";
                 cin >> id;
                 system.displayModuleInfo(id);
                 break;
             }
-            case 8: {
+            case '8': {
                 system.displayAllModuleInfo();
                 break;
             }
-            case 9: {
+            case '9': {
                 cout << "Exiting the system. Goodbye!\n";
                 break;
             }
@@ -91,7 +91,7 @@ int main(){
                 break;
             }
         }
-    } while (choice != 9);
+    } while (choice != '9');
 
     return 0;
 }
