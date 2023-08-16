@@ -8,20 +8,25 @@
 using namespace std;
 
 
-void CollegeRegistrationSystem::addStudent(const string& id, const string& name, const string& level) {
+void CollegeRegistrationSystem::addStudent(const string& id, const string& name, const string& fname, const string& level) {
     if (students.find(id)!=students.end()){
         cout << "Cannot add Student. Student with the same ID already exists.\n";
     }
     else{
-        students.emplace(id, Student(id, name, level));
+        students.emplace(id, Student(id, name, fname, level));
         cout << "Student Added Successfully\n";
     }
 }
 
-void CollegeRegistrationSystem::updateStudentRecord(const string& id, const string& newName, const string& newLevel) {
+void CollegeRegistrationSystem::updateStudentRecord(const string& id, const string& newName, const string& newFather, const string& newLevel) {
     auto it = students.find(id);
     if (it != students.end()) {
+        if(!newName.empty())
         it->second.setName(newName);
+        if(!newFather.empty())
+        it->second.setFatherName(newFather);
+        if(!newLevel.empty())
+        it->second.setLevel(newLevel);
     }
 }
 
@@ -32,6 +37,7 @@ void CollegeRegistrationSystem::displayStudentRecord(const string& id) {
         cout << "---------------------------\n\n";
         cout << "Student ID: " << student.getId() << "\n";
         cout << "Student Name: " << student.getName() << "\n";
+        cout << "Student's Father's Name: " << student.getFatherName() << "\n";
         cout << "Student Level: " << student.getLevel() << "\n\n";
         cout << "---------------------------\n\n";
     }
@@ -47,6 +53,7 @@ void CollegeRegistrationSystem::displayAllStudentRecords() {
         cout << "---------------------------\n\n";
         cout << "Student ID: " << student.getId() << "\n";
         cout << "Student Name: " << student.getName() << "\n";
+        cout << "Student's Father's Name: " << student.getFatherName() << "\n";
         cout << "Student Level: " << student.getLevel() << "\n\n";
     }
     cout << "---------------------------\n\n";
