@@ -25,29 +25,33 @@ int main(){
 
         switch (choice) {
             case '1': {
-                string id, name, fname, level;
+                string id, name, date, fname, level;
                 cout << "Enter Student ID: ";
                 getline(cin >> ws, id) ;
                 cout << "Enter Student Name: ";
                 getline(cin >> ws, name) ;
+                cout << "Enter Student Date of Admission: ";
+                getline(cin >> ws, date) ;
                 cout << "Enter Student's Father's Name: ";
                 getline(cin >> ws, fname) ;
                 cout << "Enter Student Level (UG/PG): ";
                 getline(cin >> ws, level) ;
-                system.addStudent(id, name, fname, level);
+                system.addStudent(id, name, date, fname, level);
                 break;
             }
             case '2': {
-                string id, newName, newLevel, newFather;
+                string id, newName, newDOA, newLevel, newFather;
                 cout << "Enter Student ID: ";
                 getline(cin >> ws, id);
                 cout << "Enter New Student Name: ";
                 getline(cin, newName);
+                cout << "Enter New Student DOA: ";
+                getline(cin, newDOA);
                 cout << "Enter New Student's Father's Name: ";
                 getline(cin, newFather);
                 cout << "Enter Student Level (UG/PG): ";
                 getline(cin, newLevel) ;
-                system.updateStudentRecord(id, newName, newFather, newLevel);
+                system.updateStudentRecord(id, newName, newDOA, newFather, newLevel);
                 break;
             }
             case '3': {

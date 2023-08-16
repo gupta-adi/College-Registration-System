@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Student::Student(const string &id, const string &n, const string &fn, const string &lvl) : studentId(id), name(n), fname(fn), level(lvl)  {}
+Student::Student(const string &id, const string &n, const string &date,  const string &fn, const string &lvl) : studentId(id), name(n), doa(date), fname(fn), level(lvl) {}
 
 string Student::getId()
 {
@@ -27,6 +27,11 @@ string Student::getLevel()
     return level;
 }
 
+string Student::getDOA()
+{
+    return doa;
+}
+
 void Student::setName(const string &newName)
 {
     name = newName;
@@ -40,4 +45,9 @@ void Student::setFatherName(const string &newFName)
 void Student::setLevel(const string &newLevel)
 {
     level = newLevel;
+}
+
+void Student::setDOA(const string &newDate)
+{
+    doa = newDate;
 }
