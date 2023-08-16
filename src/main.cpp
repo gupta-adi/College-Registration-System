@@ -68,7 +68,7 @@ int main(){
             case '5': {
                 string id, name;
                 cout << "Enter Module ID: ";
-                getline(cin >> ws,name);
+                getline(cin >> ws, id);
                 cout << "Enter Module Name: ";
                 getline(cin >> ws, name);
                 system.addModule(id, name);

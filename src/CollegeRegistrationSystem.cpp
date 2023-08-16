@@ -10,11 +10,11 @@ using namespace std;
 
 void CollegeRegistrationSystem::addStudent(const string& id, const string& name, const string& date, const string& fname, const string& level) {
     if (students.find(id)!=students.end()){
-        cout << "Cannot add Student. Student with the same ID already exists.\n";
+        cout << "\nCannot add Student. Student with the same ID already exists.\n";
     }
     else{
         students.emplace(id, Student(id, name, date, fname, level));
-        cout << "Student Added Successfully\n";
+        cout << "\nStudent Added Successfully\n";
     }
 }
 
@@ -29,6 +29,9 @@ void CollegeRegistrationSystem::updateStudentRecord(const string& id, const stri
         it->second.setFatherName(newFather);
         if(!newLevel.empty())
         it->second.setLevel(newLevel);
+    }
+    else{
+        cout << "\nStudent Record doesn't exist\n";
     }
 }
 
@@ -78,6 +81,9 @@ void CollegeRegistrationSystem::updateModule(const string& id, const string& new
     if (it != modules.end()) {
         it->second.setName(newName);
     }
+    else{
+        cout << "\nModule Record doesn't exist\n";
+    }
 }
 
 void CollegeRegistrationSystem::displayModuleInfo(const string& id) {
@@ -90,7 +96,7 @@ void CollegeRegistrationSystem::displayModuleInfo(const string& id) {
         cout << "---------------------------\n\n";
     }
     else{
-        cout << "Module not found.\n";
+        cout << "\nModule not found.\n";
     }
 }
 
