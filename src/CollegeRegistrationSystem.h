@@ -17,8 +17,8 @@ public:
     void updateStudentRecord();
     void displayStudentRecord(const string& id) ;
     void displayAllStudentRecords() ;
-    void addModule(const string& id, const string& name);
-    void updateModule(const string& id, const string& newName);
+    void addModule();
+    void updateModule();
     void displayModuleInfo(const string& id) ;
     void displayAllModuleInfo() ;
 };

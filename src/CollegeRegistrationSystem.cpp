@@ -105,29 +105,45 @@ void CollegeRegistrationSystem::displayAllStudentRecords()
     cout << "---------------------------\n\n";
 }
 
-void CollegeRegistrationSystem::addModule(const string &id, const string &name)
+void CollegeRegistrationSystem::addModule()
 {
+    string id, name;
+
+    cout << "Enter Module ID: ";
+    getline(cin >> ws, id);
+    
     if (modules.find(id) != modules.end())
     {
         cout << "Cannot add Module. Module with the same ID already exists.\n";
     }
     else
     {
+        cout << "Enter Module Name: ";
+        getline(cin >> ws, name);
         modules.emplace(id, Module(id, name));
         cout << "Module Added Successfully\n";
     }
 }
 
-void CollegeRegistrationSystem::updateModule(const string &id, const string &newName)
+void CollegeRegistrationSystem::updateModule()
 {
-    auto it = modules.find(id);
-    if (it != modules.end())
-    {
-        it->second.setName(newName);
-    }
-    else
-    {
-        cout << "\nModule Record doesn't exist\n";
+    string id, newName;
+    if(modules.empty()){
+        cout << "No module record exists\n";
+    }else{
+        cout << "Enter Module ID: ";
+        getline(cin >> ws, id);   
+        auto it = modules.find(id);
+        if (it != modules.end())
+        {
+            cout << "\nModule Record doesn't exist\n";
+        }
+        else
+        { 
+            cout << "Enter New Module Name: ";
+            getline(cin >> ws, newName);
+            it->second.setName(newName);
+        }
     }
 }
 

@@ -8,7 +8,7 @@ using namespace std;
 int main(){
     CollegeRegistrationSystem system;
     
-    char choice;
+    string choice;
     do {
         cout << "\nCollege Registration System Menu\n";
         cout << "1. Add Student\n";
@@ -22,8 +22,10 @@ int main(){
         cout << "9. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice ;
-
-        switch (choice) {
+        if(choice[1]!='\0'){
+            choice="0";
+        }
+        switch (choice[0]) {
             case '1': {
                 system.addStudent();
                 break;
@@ -44,21 +46,13 @@ int main(){
                 break;
             }
             case '5': {
-                string id, name;
-                cout << "Enter Module ID: ";
-                getline(cin >> ws, id);
-                cout << "Enter Module Name: ";
-                getline(cin >> ws, name);
-                system.addModule(id, name);
+                
+                system.addModule();
                 break;
             }
             case '6': {
-                string id, newName;
-                cout << "Enter Module ID: ";
-                getline(cin >> ws, id);
-                cout << "Enter New Module Name: ";
-                getline(cin >> ws, newName);
-                system.updateModule(id, newName);
+                
+                system.updateModule();
                 break;
             }
             case '7': {
@@ -81,7 +75,7 @@ int main(){
                 break;
             }
         }
-    } while (choice != '9');
+    } while (choice[0] != '9');
 
     return 0;
 }
